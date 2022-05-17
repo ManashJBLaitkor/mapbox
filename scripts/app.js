@@ -23,20 +23,6 @@ map.addControl(nav);
 map.addControl(directions, "bottom-left");
 map.scrollZoom.enable();
 
-map.on("load", () => {
-  map.addLayer({
-    id: "theBox",
-    type: "fill",
-    source: "theBox",
-    layout: {},
-    paint: {
-      "fill-color": "#FFC300",
-      "fill-opacity": 0.5,
-      "fill-outline-color": "#FFC300",
-    },
-  });
-});
-
 const layerList = document.getElementById("menu");
 const inputs = layerList.getElementsByTagName("input");
 var layerId;
