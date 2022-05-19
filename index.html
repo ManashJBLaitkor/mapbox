@@ -1,56 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Demo: Route finding with the Directions API and Turf.js</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Import Mapbox GL JS -->
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <title>Mapbox POC</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js"></script>
     <link
-      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css"
       rel="stylesheet"
     />
-
-    <!-- Import Mapbox GL Directions -->
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
     <link
       rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.0/mapbox-gl-draw.css"
       type="text/css"
     />
-    <link rel="stylesheet" href="./css/main.css" type="text/css" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.2.2/mapbox-gl-draw.css"
-      type="text/css"
-    />
-    <!-- Import Turf & Polyline -->
-    <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mapbox-polyline/1.1.1/polyline.js"></script>
-    <script type="module" src="./scripts/app.js"></script>
+    <link rel="stylesheet" href="./style/style.css" type="text/css" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.0/mapbox-gl-draw.js"></script>
+    <script type="module" src="./script/app.js" defer></script>
   </head>
-
   <body>
     <div id="map"></div>
-
-    <!-- <div class="sidebar">
-      <h1>Reports</h1>
-      <div id="reports"></div>
-    </div> -->
+    <div class="info-box">
+      <p>Draw your route using the draw tools (25 points max)</p>
+      <div id="calculated-line"></div>
+    </div>
 
     <div class="calculation-box">
-      <p>Click the polygon option to draw a polygon.</p>
+      <p>Click the map to draw a polygon.</p>
       <div id="calculated-area"></div>
     </div>
   </body>
-
-  <div id="menu">
-    <input id="true" type="radio" name="rtoggle" value="true" />
-    <label for="true">Polygon</label>
-
-    <!--<input id="false" type="radio" name="rtoggle" value="false" />-->
-    <!--<label for="false">Route</label>-->
-  </div>
 </html>
